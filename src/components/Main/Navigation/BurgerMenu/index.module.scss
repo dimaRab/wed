@@ -1,0 +1,107 @@
+.burger {
+   &Container {
+      background-color: rgba(255,255,255,0.5);
+      position: fixed;
+      right: 10px;
+      top: 10px;
+      border-radius: 50%;
+      z-index: 101;
+      padding: 5px;
+   }
+}
+
+.burgerContainer.burgerOpen {
+   background-color: transparent;
+}
+
+.menu {
+   position: fixed;
+   width: 100vw;
+   height: 100vh;
+   left: 0;
+   z-index: 100;
+   transform: translateX(130%);
+   transition: all 0.2s;
+
+   &Blur {
+      width: 100vw;
+      height: 100vh;
+      backdrop-filter: blur(2px);
+      position: absolute;
+      right: 30%;
+   }
+
+   &Content {
+      position: absolute;
+      width: 43%;
+      height: 100%;
+      background-color: rgba(255,255,255,1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.4s;
+      right: 0;
+      background-image: url("/burger.jfif");
+      background-size: cover;
+   }
+
+   &Link {
+      z-index: 103;
+      font-style: italic;
+   }
+
+   &Header {
+      padding: 16px 0;
+      font-size: 2rem;
+      border-bottom: 1px solid black;
+      width: 100%;
+      text-align: center;
+   }
+
+   &Navigation {
+      font-size: 1.8rem;
+      margin-top: 30px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+   }
+}
+
+.menu.open {
+   transform: translateX(0);
+}
+
+
+@media(hover: hover) {
+   .menuLink:hover {
+      color: rgb(15, 105, 190);
+   }
+}
+
+@media(hover: none) {
+   .menuLink:hover {
+      color: black;
+   }
+
+   .menuLink:active {
+      color: rgb(15, 105, 190);
+   }
+}
+
+@media (min-width: 1060px) {
+   .burgerContainer {
+      display: none;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .menuContent {
+      width: 100%;
+   }
+
+   .menuBlur {
+      backdrop-filter: none;
+   }
+}

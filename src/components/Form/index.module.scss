@@ -1,0 +1,100 @@
+.container {
+   margin: 0 20px;
+}
+
+.box {
+   margin-top: 50px;
+   max-width: 700px;
+   width: 100%;
+}
+
+.label {
+   margin-top: 20px;
+   font-size: 1.8rem !important;
+   font-weight: 400 !important;
+}
+
+.button {
+   font-size: 1.6rem !important;
+   margin-top: 20px;
+}
+
+.input {
+   padding: 20px 10px !important;
+   border-radius: 15px !important;
+   font-size: 1.4rem !important; // Изменение размера шрифта
+   font-family: 'Montserrat', sans-serif !important;
+
+}
+
+.error {
+   font-size: 1.2rem !important;
+   margin-top: 5px;
+   font-family: 'Montserrat italic';
+}
+
+.notificationTitle {
+   font-size: 1.8rem;
+}
+
+.notificationMessage {
+   font-size: 1.4rem;
+}
+
+.radio {
+   &Label{
+      font-size: 1.6rem !important;
+      font-weight: 400 !important;
+
+      &:hover {
+         cursor: pointer;
+      }
+   }
+
+   &FirstLabel {
+      font-size: 1.8rem !important;
+      font-weight: 400 !important;
+   }
+
+   &Root {
+      margin-top: 20px;
+      font-size: 1.4rem !important;
+   }
+
+   &Radio {
+   
+      &:hover {
+         cursor: pointer;
+      }
+   }
+}
+
+.checkbox {
+   &Label {
+      font-size: 1.6rem !important;
+      line-height: 1.3;
+
+      &:hover {
+         cursor: pointer;
+      }
+   }
+
+   &Input {
+      &:hover {
+         cursor: pointer;
+      }
+   }
+
+   &Root {
+      gap: 100px !important;
+      margin-top: 20px;
+   }
+}
+
+.description {
+   font-size: 1.4rem;
+   font-family: 'Montserrat';
+   font-style: italic;
+   color: rgba(45,41,38,0.8);
+   line-height: 1.4;
+}

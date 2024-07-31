@@ -1,0 +1,80 @@
+.navigation {
+   display: flex;
+   gap: 10px;
+   list-style: none;
+   height: 100%;
+   white-space: nowrap;
+   overflow-x: auto;
+   max-width: 100%;
+   position: relative;
+
+   &Container {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 60px;
+      background-color: rgba(255,255,255,0.4);
+      box-shadow: 0 0 8px rgba(45,41,38,0.3);
+      backdrop-filter: blur(4px);
+      border-bottom-left-radius: 32px;
+      border-bottom-right-radius: 32px;
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      overflow-y: hidden;  /* Скрываем вертикальный скролл */
+   }
+}
+
+.navigation li {
+   margin-bottom: 0;
+   font-size: 1.3rem;
+   display: flex;
+   text-transform: uppercase;
+   height: 100%;
+   border-radius: 5px;
+   white-space: nowrap;
+}
+
+.navigation li a {
+   display: flex;
+   height: 100%;
+   align-items: center;
+   justify-content: center;
+   padding: 0 20px;
+   transition: color 0.3s, background-color 0.3s;
+   white-space: nowrap;
+}
+
+
+@media(hover: hover) {
+   .navigation li:hover {
+      color: white;
+      background-color: rgb(15, 105, 190);
+   }
+}
+
+@media(hover: none) {
+   .navigation li:hover {
+      color: black;
+      background-color: transparent;
+   }
+
+   .navigation li:active {
+      color: white;
+      background-color: rgb(15, 105, 190);
+   }
+}
+
+@media (max-width: 1059px) {
+   .navigationContainer {
+      display: none;
+   }
+}
+
+@media (max-width: 1090px) {
+   .navigation {
+      gap: 0px;
+   }
+}

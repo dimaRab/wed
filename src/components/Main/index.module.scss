@@ -1,0 +1,82 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  background-image: url('/image.webp');
+  background-size: cover;
+  background-position: center;
+  
+  &Blur {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    width: 42vw;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(5px); 
+  }
+
+    &Transparent {
+      position: absolute;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;   
+      background-image: url('/image.webp');
+      background-position: center;
+    }
+
+    &Right {
+      width: 100vw;
+      height: 100vh;
+      height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+}
+
+.scrolled {
+  background-color: rgba(255,255,255,0);
+}
+
+@media (max-width: 580px) {
+  .main {
+    width: 100dvw;
+    height: 100vh;
+    height: 100svh;
+    background-size: cover;
+    background-image: url('/image-adaptive.webp');
+    
+    &Blur {
+      bottom: 0;
+      width: 100vw;
+      height: 30vh;
+      height: 30svh;
+      background: rgba(255, 255, 255, 0.6);    
+    }
+  
+      &Transparent {
+        bottom: 0;
+        background-image: url('/image-adaptive.webp');
+      }
+  
+      &Right {
+        width: 100vw;
+        height: 100vh;
+        height: 100svh;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+      }
+  }
+}

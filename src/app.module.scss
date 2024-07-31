@@ -1,0 +1,179 @@
+.appContainer {
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   justify-content: center;
+   align-items: center;
+}
+
+.main {
+   margin-top: 60px;
+   max-width: 40dvw;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   font-size: calc(5vh + 5vw);
+   font-weight: bold;
+   font-family: 'Pacifico', cursive;
+
+
+   &Date {
+      line-height: 2;
+      font-size: calc(3vh + 3vw);
+   }
+
+   &Heart{
+      font-size: calc(10vh + 6vw);
+      height: calc(10vh + 6vw);
+      line-height: 1.1;
+   }
+}  
+
+.invitation {
+   margin: 0 10px;
+   margin-top: 50px;
+   line-height: 1.6;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   max-width: 840px;
+   color: rgba(45, 41, 38, 0.8);
+
+   &Photos {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      div {
+         max-width: 200px;
+         width: 100%;
+         height: auto;
+      }
+
+      div:nth-child(2) {
+         max-width: 100px;
+      }
+
+      div img {
+         width: 100%;
+         border-radius: 50%;
+      }
+
+      &Icon {
+         width: 100%;
+         height: auto;
+         color: rgb(221, 43, 43);
+      }
+   }
+}
+
+.section {
+   margin-top: 100px;
+
+   &Content {
+      text-align: center;
+      font-size: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 0 10px;
+   }
+
+   &Title {
+      font-size: 3rem;
+      text-transform: uppercase;
+      color: rgb(15, 105, 190);
+      max-width: 100%;
+      word-wrap: wrap;
+      margin: 0 10px;
+   }
+
+   &Icon {
+      font-size: 5rem;
+      color: rgb(15, 105, 190);
+      
+   }
+}
+
+.address {
+   font-size: 1.8rem;
+   color: rgba(45,41,38,0.8);
+   margin: 0 10px;
+}
+
+.schedule {
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 100px;
+
+    &Date {
+      margin-top: 100px;
+      font-size: 2.8rem;
+    }
+}
+
+.notification {
+   right: 0;
+   bottom: 100;
+   font-size: 1.4rem !important;
+}
+
+.footer {
+   margin-top: 100px;
+   width: 100%;
+   height: 40vh;
+   height: 40svh;
+   background-color: rgb(15, 105, 190);
+   display: flex;
+   align-items:center;
+   justify-content: center;
+   flex-direction: column;
+   text-align: center;
+
+   &Text {
+      color: white;
+      font-size: 3rem;
+   }
+
+   &Link {
+      color: white;
+      font-size: 2rem;
+   }
+
+   &Icon {
+      color: white;
+      margin-top: 1rem;
+      font-size: 10rem;
+   }
+}
+
+@media (max-width: 580px) {
+   .main {
+      max-width: 100vw;
+      width: 100%;
+      height: 30vh;
+      height: 30svh;
+      
+      font-size: calc(2.6vh + 2.6vw);
+
+      &Date {
+         line-height: 1;
+      }
+
+      &Name {
+         line-height: 1;
+      }
+   
+      &Heart {
+         font-size: calc(7vh + 3vw);
+         height: calc(7vh + 3vw);
+      }
+   }  
+ }

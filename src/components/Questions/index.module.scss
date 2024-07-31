@@ -1,0 +1,46 @@
+.questions {
+   display: flex;
+   flex-direction: column;
+   margin: 0 20px;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+   max-width: 700px;
+   text-align: left;
+   width: 100%;
+
+   &Title {
+      font-size: 2.4rem;
+      margin-top: 50px;
+      
+   }
+
+   &Text {
+      font-size: 1.8rem;
+      color: rgba(45,41,38,0.8);
+      line-height: 1.5;
+   }
+}
+
+.colorsContainer {
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+   max-width: 420px;
+   justify-content: center;
+}
+
+.color {
+   margin-left: -15px;
+   margin-top: -15px;
+   border: 3px solid white
+}
+
+.textContainer {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}

@@ -9,7 +9,6 @@ import '@mantine/notifications/styles.css';
 import '@mantine/core/styles.css'
 import { MantineProvider } from '@mantine/core';
 import { YMaps } from "@pbe/react-yandex-maps";
-import { GiLovers, GiGloves } from "react-icons/gi";
 import { PiChurch } from "react-icons/pi";
 import { FaUtensils, FaPhotoVideo } from "react-icons/fa";
 import { GrSchedules } from "react-icons/gr";
@@ -18,7 +17,9 @@ import { GrDocumentVerified } from "react-icons/gr";
 import { IoIosContacts } from "react-icons/io";
 import Contacts from './components/Contacts';
 import Lottie from 'lottie-react';
-import heart from "../public/animations/heart.json";
+import heart from "./animations/heart.json";
+import we from "./animations/we.json";
+import loveStory from "./animations/lovestory.json";
 
 function App() {
 
@@ -39,12 +40,8 @@ function App() {
   const invitationRef = useRef<HTMLDivElement>(null);
   const scheduleRef = useRef<HTMLDivElement>(null);
   const questionsRef = useRef<HTMLDivElement>(null);
-  const galleryRef = useRef<HTMLDivElement>(null);
-  const heartRef = useRef<HTMLDivElement>(null);
   const nuptialsRef = useRef<HTMLDivElement>(null);
   const weddingRef = useRef<HTMLDivElement>(null);
-  const invitationTitleRef = useRef<HTMLDivElement>(null);
-  const galleryTitleRef = useRef<HTMLDivElement>(null);
   const scheduleTitleRef = useRef<HTMLDivElement>(null);
   const nuptialsTitleRef = useRef<HTMLDivElement>(null);
   const weddingTitleRef = useRef<HTMLDivElement>(null);
@@ -56,20 +53,10 @@ function App() {
 
   useEffect(() => {
 
-    gsap.from(invitationTitleRef.current, {
-      opacity: 0,
-      y: -100,
-      duration: 2,
-      scrollTrigger: {
-        trigger: invitationTitleRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
     gsap.from(invitationRef.current, {
       opacity: 0,
-      y: 100,
-      duration: 1,
+      x: -500,
+      duration: 1.4,
       scrollTrigger: {
         trigger: invitationRef.current,
         toggleActions: 'play none none reverse',
@@ -116,30 +103,6 @@ function App() {
         toggleActions: 'play none none reverse',
       }
     })
-
-
-    gsap.from(galleryTitleRef.current, {
-      opacity: 0,
-      y: -100,
-      duration: 2,
-      scrollTrigger: {
-        trigger: galleryTitleRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
-    gsap.from(galleryRef.current, {
-      opacity: 0,
-      y: 100,
-      duration: 1,
-      scrollTrigger: {
-        trigger: galleryRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
-    const tl = gsap.timeline({ repeat: -1 });
-    tl.fromTo(heartRef.current, { duration: 0.3, scale: 1.1, y: -5 }, { duration: 0.3, scale: 1, y: 0 });
 
     gsap.from(nuptialsTitleRef.current, {
       opacity: 0,
@@ -250,15 +213,17 @@ function App() {
 
           <section className={style.section}>
             <div className={style.sectionContent}>
-              <div ref={invitationTitleRef}>
+              <div className={style.sectionTitleContainer}>
                 <h3 className={style.sectionTitle}>Дима 🕊 Карина</h3>
-                <div className={style.sectionIcon}><GiLovers /></div>
+                <div className={style.sectionAnimation}><Lottie animationData={we} /></div>
               </div>
-              <div className={style.invitation} ref={invitationRef}>
-                <p>Дорогие родные, близкие и друзья!</p>
-                <p>24 августа 2024 года состоится неповторимый и незабываемый для нас праздник - день нашей свадьбы ✨.</p>
-                <p>Нам будет очень приятно, если вы придете и сможете разделить с нами радостные моменты в волнующей атмосфере любви и счастья!</p>
-                <p>Ниже предлагаем вам ознакомиться с таймингом дня и подтвердить свое присутствие заполнением маленькой анкеты ❤️.</p>
+              <div className={style.invitation} >
+                <div ref={invitationRef}>
+                  <p>Дорогие родные, близкие и друзья!</p>
+                  <p>24 августа 2024 года состоится неповторимый и незабываемый для нас праздник - день нашей свадьбы ✨.</p>
+                  <p>Нам будет очень приятно, если вы придете и сможете разделить с нами радостные моменты в волнующей атмосфере любви и счастья!</p>
+                  <p>Ниже предлагаем вам ознакомиться с таймингом дня и подтвердить свое присутствие заполнением маленькой анкеты ❤️.</p>
+                </div>
                 <div className={style.invitationPhotos}>
                   <div>
                     <img src="./me.webp" alt="me" />
@@ -279,12 +244,12 @@ function App() {
 
           <section className={style.section}>
             <div className={style.sectionContent}>
-              <div ref={galleryTitleRef}>
+              <div className={style.sectionTitleContainer}>
                 <h3 className={style.sectionTitle}>Love Story</h3>
-                <div className={style.sectionIcon}><GiGloves /></div>
+                <div className={style.sectionAnimation}><Lottie animationData={loveStory} /></div>
               </div>
             </div>
-            <div ref={galleryRef}>
+            <div>
               <Gallery
                 photos={[
                   { id: 1, src: "./photos/1.webp", preview: "./photos/preview/1.webp", description: "photo 1" },

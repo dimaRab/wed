@@ -20,6 +20,8 @@ import Lottie from 'lottie-react';
 import heart from "./animations/heart.json";
 import we from "./animations/we.json";
 import loveStory from "./animations/lovestory.json";
+import schedule from "./animations/schedule.json";
+import church from "./animations/church.json";
 
 function App() {
 
@@ -42,7 +44,6 @@ function App() {
   const questionsRef = useRef<HTMLDivElement>(null);
   const nuptialsRef = useRef<HTMLDivElement>(null);
   const weddingRef = useRef<HTMLDivElement>(null);
-  const scheduleTitleRef = useRef<HTMLDivElement>(null);
   const nuptialsTitleRef = useRef<HTMLDivElement>(null);
   const weddingTitleRef = useRef<HTMLDivElement>(null);
   const questionsTitleRef = useRef<HTMLDivElement>(null);
@@ -63,20 +64,10 @@ function App() {
       }
     })
 
-    gsap.from(scheduleTitleRef.current, {
-      opacity: 0,
-      y: -100,
-      duration: 2,
-      scrollTrigger: {
-        trigger: scheduleTitleRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
     gsap.from(scheduleRef.current, {
       opacity: 0,
-      y: 100,
-      duration: 1,
+      x: -500,
+      duration: 1.4,
       scrollTrigger: {
         trigger: scheduleRef.current,
         toggleActions: 'play none none reverse',
@@ -267,9 +258,9 @@ function App() {
 
           <section className={`${style.section} ${style.schedule}`}>
             <div className={style.sectionContent}>
-              <div ref={scheduleTitleRef}>
+              <div className={style.sectionTitleContainer}>
                 <h3 className={style.sectionTitle}>Программа свадебного дня</h3>
-                <div className={style.sectionIcon}><GrSchedules /></div>
+                <div className={style.sectionAnimation}><Lottie animationData={schedule} /></div>
               </div>
               <div ref={scheduleRef} style={{ marginTop: '50px' }}>
                 <span className={style.scheduleDate}>24 августа 2024 г.</span>
